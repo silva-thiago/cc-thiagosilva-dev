@@ -57,7 +57,7 @@ const Metadata: React.FC<PageProps> = ({ title }) => {
         <meta name='twitter:title' content='' />
         <meta name='twitter:description' content='' />
         {/* Page title */}
-        <title>{title}</title>
+        <title>{`TS {DEV}_`} | {title}</title>
       </Head>
     </>
   )
