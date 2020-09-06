@@ -1,0 +1,15 @@
+/* header styles */
+.hero {
+  @apply h-screen;
+  @apply py-4;
+  @apply flex;
+  @apply flex-col;
+  @apply items-center;
+  @apply justify-center;
+
+  .title {
+    @apply text-2xl;
+    @apply pb-4;
+    @apply leading-tight;
+  }
+}
