@@ -1,30 +1,22 @@
 import React from 'react'
 import Document, { DocumentInitialProps, DocumentContext, Html, Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
-    const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
 
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
-        })
+    ctx.renderPage = () => originalRenderPage({
+      // useful for wrapping the whole react tree
+      enhanceApp: (App) => (props) => (<App {...props} />),
+      // useful for wrapping in a per-page basis
+      enhanceComponent: (Component) => Component
+    })
 
-      const initialProps = await Document.getInitialProps(ctx)
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      }
-    } finally {
-      sheet.seal()
+    // Run the parent `getInitialProps`, it now includes the custom `renderPage`
+    const initialProps = await Document.getInitialProps(ctx)
+
+    return {
+      ...initialProps,
     }
   }
 
