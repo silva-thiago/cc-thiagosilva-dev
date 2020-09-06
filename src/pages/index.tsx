@@ -1,36 +1,23 @@
 import React from 'react'
 
 import PageHead from '@/components/PageHead'
+import Nav from '@/components/Nav'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import Article from '@/components/Article'
 
-import { Greeting, Footer } from '@/styles/pages/Home'
-
-import Logo from '../assets/earth.svg'
-
-const Home: React.FC = () => {
+const Home: React.FC = ({ children }) => {
   return (
-    <div className='app'>
+    <div className={'app'}>
       <PageHead title='Home' />
-      <header>
-        <nav>
-          <div className='container'>
-            <Logo />
-            <span>Brand</span>
-          </div>
-        </nav>
-        <div className='container'>
-          <p>Header</p>
-        </div>
-      </header>
+      <Nav />
+      <Header />
       <main>
-        <div className='container'>
-          <Greeting>Hello, World!</Greeting>
-        </div>
+        <Article>
+          {children}
+        </Article>
       </main>
-      <Footer>
-        <div className='container'>
-          <p>Proudly powered by {'Thiago Silva'}</p>
-        </div>
-      </Footer>
+      <Footer />
     </div>
   )
 }

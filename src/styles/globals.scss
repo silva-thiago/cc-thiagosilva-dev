@@ -1,0 +1,33 @@
+/**
+ * This injects Tailwind's base styles and any base styles registered by plugins.
+ */
+/* purgecss start ignore */
+@import 'tailwindcss/base';
+
+/* Your own custom base styles */
+@import './core/breakpoints';
+@import './pages/index';
+
+/**
+  * This injects Tailwind's component classes and any component classes registered by plugins.
+  */
+@import 'tailwindcss/components';
+
+/* Your own custom component styles */
+@import './components/Header';
+@import './components/Nav';
+@import './components/Footer';
+
+/**
+  * This injects Tailwind's utility classes and any utility classes registered by plugins.
+  */
+@import 'tailwindcss/utilities';
+/* purgecss end ignore */
+
+/**
+  * Use this directive to control where Tailwind injects the responsive variations of each utility.
+  * If omitted, Tailwind will append these classes to the very end of your stylesheet by default.
+  */
+@import 'tailwindcss/screens';
+
+/* Your own custom screens */
