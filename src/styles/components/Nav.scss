@@ -1,0 +1,38 @@
+/* nav styles */
+.navbar {
+  max-height: 4rem;
+  max-width: 1440px;
+  padding: .5rem 0;
+  width: 90vw;
+
+  .btn-indigo {
+    @apply bg-indigo-700;
+    @apply text-white;
+    @apply font-bold;
+    @apply border-b-4;
+    @apply border-indigo-900;
+    @apply rounded;
+    @apply p-2;
+    @apply transition;
+    @apply duration-150;
+    @apply ease-in-out;
+
+    &:hover {
+      @apply bg-indigo-600;
+      @apply border-indigo-800;
+      @apply -translate-y-1;
+      @apply scale-110;
+      @apply shadow;
+    }
+
+    &:active {
+      @apply bg-indigo-500;
+      @apply border-b-0;
+    }
+
+    & .icon {
+      color: #f7fafc;
+      width: 1.25rem;
+    }
+  }
+}
