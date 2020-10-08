@@ -51,7 +51,7 @@
     ]
   },
   "dependencies": {
-    "next": "^9.5.2",
+    "next": "^9.5.4",
     "next-images": "^1.4.1",
     "next-purgecss": "^4.0.0",
     "react": "^16.13.1",
